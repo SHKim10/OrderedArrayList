@@ -1,18 +1,26 @@
 import java.util.ArrayList;
 public class NoNullArrayList<T> extends ArrayList<T>{
 
-  public boolean add(T element){
-    if (element == null) throw new IllegalArgumentException("Null is an illegal element.");
-    return super.add(element);
+  public NoNullArrayList(){
+    super();
   }
 
-  public void add(int index, T element){
-    if (element == null) throw new IllegalArgumentException("Null is an illegal element.");
-    super.add(index, element);
+  public NoNullArrayList(int startingCapacity){
+    super(startingCapacity);
   }
 
-  public T set(int index, T element){
-    if (element == null) throw new IllegalArgumentException("Null is an illegal element.");
-    return super.set(index, element);
+  public boolean add(T value){
+    if (value == null) throw new IllegalArgumentException("Null is an illegal element.");
+    return super.add(value);
+  }
+
+  public void add(int index, T value){
+    if (value == null) throw new IllegalArgumentException("Null is an illegal element.");
+    super.add(index, value);
+  }
+
+  public T set(int index, T value){
+    if (value == null) throw new IllegalArgumentException("Null is an illegal element.");
+    return super.set(index, value);
   }
 }
