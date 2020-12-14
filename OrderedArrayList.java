@@ -1,5 +1,13 @@
 public class OrderedArrayList<T extends Comparable<T>> extends NoNullArrayList<T>{
 
+  public OrderedArrayList(){
+    super();
+  }
+
+  public OrderedArrayList(int startingCapacity){
+    super(startingCapacity);
+  }
+
   //Helper method for finding the correct index to add to
   private int insertIndex(T element){
     for (int i = 0; i < size(); i++){
