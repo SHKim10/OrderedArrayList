@@ -19,4 +19,11 @@ public class OrderedArrayList<T extends Comparable<T>> extends NoNullArrayList<T
   public void add(int index, T element){
     add(element);
   }
+
+  public T set(int index, T element){
+    if (element == null) throw new IllegalArgumentException("Null is an illegal element.");
+    T result = super.remove(index);
+    add(element);
+    return result;
+  }
 }
